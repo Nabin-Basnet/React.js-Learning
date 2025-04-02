@@ -43,20 +43,24 @@
 // }
 // sum(7,2);
 
-const person={name:'nabin',
-    age:20
-};
-const {name,age}=person;
-console.log(age);
+// const person={name:'nabin',
+//     age:20
+// };
+// const {name,age}=person;
+// console.log(age);
 
-const animal=["dog",'khasi',"giraffe"]
-const [a,b,c]=animal;
+// const animal=["dog",'khasi',"giraffe"]
+// const [a,b,c]=animal;
 
 
-console.log(a,b,c);
+// console.log(a,b,c);
 
-const detailmore={...person,address:"itahari"}
-console.log(detailmore);
+// const detailmore={...person,address:"itahari"}
+// console.log(detailmore);
 
-const moreanimal=[...animal,"shyal"]
-console.log(moreanimal);
+// const moreanimal=[...animal,"shyal"]
+// console.log(moreanimal);
+
+
+// const sayhello=({...rest})=>`hello ${rest.name}`;
+// console.log(sayhello({name:"nabin"}))
