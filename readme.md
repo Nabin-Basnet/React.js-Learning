@@ -1,0 +1,7 @@
+-> js basics
+-> installation of react
+-> react using vite bundler
+-> components
+-> props 
+-> props drilling 
+-> styling in react

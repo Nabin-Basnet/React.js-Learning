@@ -1,8 +1,13 @@
+import Style from "./herosec.module.css"
 
-const Hero=()=>{
+export default function Hero(){
     return(
-        <h1>this is hero</h1>
-    )
+        <div>
+            <h1>this is hero</h1>
+            <p className={Style.HeroSectionHeading}>herosection</p>
+            <span className={Style.herSubHeading}>this is our super react app</span>
+
+        </div>
+    );
 }
 
-export default  Hero

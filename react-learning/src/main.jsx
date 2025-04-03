@@ -5,6 +5,7 @@ import HOmepage from './pages/home.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    {/* <ChildComp /> */}
     <HOmepage />
   </StrictMode>,
 )
