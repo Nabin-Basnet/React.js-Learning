@@ -1,15 +1,18 @@
 import { useState } from "react"; // ✅ Import useState
-// import Hero from "../section/herosection";
+import Hero from "../section/herosection";
 import ReducerHook from "./renderhook";
+import Loginpage from "./loginpage";
 
-// const lists = [
-//   { id: 1, u_name: "Aarav Sharma", age: 25 },
-//   { id: 2, u_name: "Sophia Patel", age: 23 },
-//   { id: 3, u_name: "Rohan Mehta", age: 27 },
-//   { id: 4, u_name: "Isabella Thomas", age: 22 },
-//   { id: 5, u_name: "Liam Wilson", age: 28 },
-//   { id: 6, u_name: "Emma Brown", age: 24 },
-// ];
+
+// create list
+const lists = [
+  { id: 1, u_name: "Aarav Sharma", age: 25 },
+  { id: 2, u_name: "Sophia Patel", age: 23 },
+  { id: 3, u_name: "Rohan Mehta", age: 27 },
+  { id: 4, u_name: "Isabella Thomas", age: 22 },
+  { id: 5, u_name: "Liam Wilson", age: 28 },
+  { id: 6, u_name: "Emma Brown", age: 24 },
+];
 
 export default function HomePage() {
   const [count, setCount] = useState(0); // ✅ Fixed variable naming
@@ -43,9 +46,11 @@ export default function HomePage() {
       </div>
 
       <ReducerHook />
+      <Loginpage />
 
-      {/* List of users */}
-      {/* <div>
+      {/* --------------display  List of users--------------- */}
+      <h1>list of users</h1>
+       <div>
         {lists.map((list) => (
           <Card key={list.id} data={list} />
         ))}
@@ -60,11 +65,13 @@ export default function HomePage() {
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit autem pariatur dolorem ducimus consectetur quis.
       </p>
-
-      <Hero />*/ }
+{/* --------------------import hero function from herosection.jsx---------------------- */}
+      <Hero /> 
     </>
   );
 }
+
+
 
 // Card Component
 const Card = ({ data }) => {
