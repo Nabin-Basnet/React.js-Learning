@@ -4,7 +4,7 @@ export default function LearnUseEffect() {
     const [products, setProducts] = useState([]);
 
     const getData = async () => {
-        const res = await fetch("https://67f37091ec56ec1a36d5cb7f.mockapi.io/product");
+        const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
         console.log("Fetched Data:", data);
         setProducts(data);
@@ -35,11 +35,11 @@ export default function LearnUseEffect() {
                             textAlign: 'center',
                         }}
                     >
-                        <h2 style={{ fontSize: '18px', marginBottom: '10px' }}>{product.name}</h2>
+                        <h2 style={{ fontSize: '18px', marginBottom: '10px' }}>{product.title}</h2>
                         
                         <img
-                            src={product.avatar}
-                            alt={product.name}
+                            src={product.image}
+                            alt={product.title}
                             style={{
                                 borderRadius: '8px',
                                 objectFit: 'cover',
@@ -47,7 +47,7 @@ export default function LearnUseEffect() {
                                 height: '100px'
                             }}
                         />
-                        <p style={{ fontSize: '18px', marginBottom: '10px' }}>{product.description}</p>
+                        {/* <p style={{ fontSize: '18px', marginBottom: '10px' }}>{product.description}</p> */}
                     </div>
                 ))}
             </div>
