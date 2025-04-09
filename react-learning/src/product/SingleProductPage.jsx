@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link,Outlet,useLocation,useParams } from "react-router";
 import "./SingleProductPage.css"; // Import external CSS
 
 export default function SingleProductPage() {
+    const uselocation = useLocation();
+    console.log(uselocation);
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +47,34 @@ export default function SingleProductPage() {
           <h3 className="product-description">{product?.description}</h3>
         </div>
       )}
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <button>
+          <Link to="review">review</Link>
+        </button>
+        <button>
+          <Link to="#">overview</Link>
+        </button>
+      </div>
+      <Outlet />
     </div>
+
   );
 }
+export function ReviewPage() {
+    return (
+      <div>
+        <div>
+          <Link to={"../"}>Go back</Link>
+        </div>
+        <h1>review Page</h1>
+      </div>
+    );
+  }
+  
+  export function OverviewPage() {
+    return (
+      <div>
+        <h1>Overview Page</h1>
+      </div>
+    );
+  }

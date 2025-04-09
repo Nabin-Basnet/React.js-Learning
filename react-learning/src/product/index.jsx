@@ -1,19 +1,20 @@
-export default function UserLayout(){
-    console.log("userlayout");
-    return(
-        <div>
-            <h1>UserLayout</h1>
-        </div>
-    )
-}
+import { Outlet } from "react-router";
+
+
 
 export function NavBar(){
     console.log("nvbbar");
     return(
-        <nav>
-            <h1>navbar</h1>
+        <div>
 
-        </nav>
+            <h1>navbar</h1>
+            {["/","/contact","/product"].map((path)=(
+                <Link key={path} to={path} >
+                    {path}
+                </Link>
+            ))}
+
+        </div>
     )
 }
 
@@ -22,6 +23,17 @@ export function Footer(){
     return(
         <div>
             <h1>footer</h1>
+        </div>
+    )
+
+}
+
+export default function UserLayout(){
+    return(
+        <div>
+            <NavBar/>
+            <Outlet/>
+            <Footer/>
         </div>
     )
 
