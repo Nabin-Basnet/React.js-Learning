@@ -49,7 +49,7 @@ export default function SingleProductPage() {
       )}
       <div style={{ display: "flex", gap: "1rem" }}>
         <button>
-          <Link to="review">review</Link>
+            <Link to={location?.pathname?.endsWith("review")}>review</Link>
         </button>
         <button>
           <Link to="#">overview</Link>
