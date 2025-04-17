@@ -4,8 +4,8 @@ import { Route } from "react-router"
 // import homePage from "./pages/homePage"
 import Loginpage from "./pages/loginpage"
 import LearnUseEffect from "./pages/learUseEffect"
-import UserLayout, { Footer, NavBar} from "./product/index"
-import Hero from "./section/herosection"
+// import UserLayout, { Footer, NavBar} from "./product/index"
+// import Hero from "./section/herosection"
 import SingleProductPage,{OverviewPage,ReviewPage} from "./product/SingleProductPage"
 // import HomePage from "./pages/homePage"
 export default function AppRouter(){
@@ -15,7 +15,7 @@ export default function AppRouter(){
             <Route path="contact" element={<LearnUseEffect/>}/>
             <Route path="product">
                 <Route element={<contact/>} index />
-                <Route path="product" >
+                <Route path="product"  >
                     <Route path=":id" element={<SingleProductPage/>}>
                     <Route path="review"element={<ReviewPage/>} />
                     <Route  index element={<OverviewPage/>}/>
