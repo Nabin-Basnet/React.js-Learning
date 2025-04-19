@@ -42,7 +42,9 @@ export default function SingleProductPage() {
         <div className="error">{errr}</div>
       ) : (
         <div className="product-card">
-          <img src={product?.image} className="product-image" />
+          <img src={product?.image}
+                                style={{viewTransitionName: `/products/${product?.id}`, color:"red"}}
+                                className="product-image duration-500 transition-all" />
           <h3 className="product-title">{product?.title}</h3>
           <h3 className="product-description">{product?.description}</h3>
         </div>

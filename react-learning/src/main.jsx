@@ -1,19 +1,18 @@
 import { StrictMode } from 'react'
-import { BrowserRouter } from "react-router"
 import { createRoot } from 'react-dom/client'
+import { RouterProvider } from "react-router"
 import './index.css'
 // import HOmepage from './pages/home.jsx'
-import LearnUseEffect from './pages/learUseEffect.jsx'
-import Loginpage from './pages/loginpage.jsx'
-import AppRouter from './routes.jsx'
+import router from '../route-data-mode.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <AppRouter/>
-      {/* <LearnUseEffect />
-      <Loginpage /> */}
-    </BrowserRouter>
+ 
+    </BrowserRouter> */}
+      <RouterProvider router={router} />
+
   </StrictMode>,
 )
