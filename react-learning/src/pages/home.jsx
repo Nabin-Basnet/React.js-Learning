@@ -1,107 +1,41 @@
-import { useState } from "react"; // ✅ Import useState
-import Hero from "../section/herosection";
-import ReducerHook from "./renderhook";
-import Loginpage from "./loginpage";
+import React from 'react';
+import { ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router'; 
 
-
-// create list
-const lists = [
-  { id: 1, u_name: "Aarav Sharma", age: 25 },
-  { id: 2, u_name: "Sophia Patel", age: 23 },
-  { id: 3, u_name: "Rohan Mehta", age: 27 },
-  { id: 4, u_name: "Isabella Thomas", age: 22 },
-  { id: 5, u_name: "Liam Wilson", age: 28 },
-  { id: 6, u_name: "Emma Brown", age: 24 },
-];
-
-export default function HomePage() {
-  const [count, setCount] = useState(0); // ✅ Fixed variable naming
-  function handleCount(type){
-    if(type=="inc"){
-      setCount(count + 1);
-    }
-    else{
-      setCount(count - 1);
-    }
-  }
+const HeroSection = () => {
   return (
-    <>
-      <div>
-        <h1>Home</h1>
-      </div>
+    <div>
+      <section className="bg-gradient-to-r from-blue-100 to-blue-200 py-16">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+          {/* Left Content */}
+          <div className="max-w-xl mb-10 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+              Discover the Latest Trends in Fashion & Lifestyle
+            </h1>
+            <p className="mt-4 text-lg text-gray-600">
+              Upgrade your style with ShopEase. Explore our collection of top-quality products tailored just for you.
+            </p>
+            <Link
+              to="/shop"
+              className="mt-6 inline-flex items-center px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700 transition"
+            >
+              <ShoppingBag className="w-5 h-5 mr-2" />
+              Shop Now
+            </Link>
+          </div>
 
-      {/* Counter with state */}
-      <div style={{alignItems:"center"}}>
-        <h2>Counter: {count}</h2>
-        <div>
-          <button onClick={() => setCount(count + 1)}>Increase</button>
-          <button onClick={() => setCount(count - 1)}>Decrease</button>
+          {/* Right Image */}
+          <div className="w-full md:w-1/2">
+            <img
+              src="https://source.unsplash.com/600x400/?shopping,fashion"
+              alt="Hero"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
         </div>
-      </div>
-
-      {/* with function */}
-      <div>
-        <button onClick={()=>handleCount("inc")}>inc</button>
-        <button onClick={()=>handleCount("dec")}>dec</button>
-      </div>
-
-      <ReducerHook />
-      <Loginpage />
-
-      {/* --------------display  List of users--------------- */}
-      <h1>list of users</h1>
-       <div>
-        {lists.map((list) => (
-          <Card key={list.id} data={list} />
-        ))}
-      </div>
-
-      <h1>Parent Component</h1>
-      <div>
-        <ChildComp count={count} greet={"Hello"} name="John Doe" />
-      </div>
-
-      <h1>HomePage</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit autem pariatur dolorem ducimus consectetur quis.
-      </p>
-{/* --------------------import hero function from herosection.jsx---------------------- */}
-      <Hero /> 
-    </>
-  );
-}
-
-
-
-// Card Component
-const Card = ({ data }) => {
-  return (
-    <div>
-      <h3>{data.u_name}</h3>
-      <p>Age: {data.age}</p>
+      </section>
     </div>
   );
 };
 
-// Child Component
-export const ChildComp = ({ count, greet = "Welcome", name = "Guest", ...rest }) => {
-  return (
-    <div style={{ backgroundColor: "gray", border: "1px solid", padding: "10px" }}>
-      <p>Child Component</p>
-      <SubChildComp count={count} />
-      <p>
-        {greet}, {name}
-      </p>
-    </div>
-  );
-};
-
-// SubChild Component
-const SubChildComp = ({ count }) => {
-  return (
-    <div>
-      <h2>SubChildComp</h2>
-      <p>Count: {count}</p>
-    </div>
-  );
-};
+export default HeroSection;

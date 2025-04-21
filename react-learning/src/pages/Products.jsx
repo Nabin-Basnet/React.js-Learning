@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import Navbar from "../components/ui/Navbar";
+
 
 export default function Products() {
     const [products, setProducts] = useState([]);
@@ -21,7 +21,6 @@ export default function Products() {
 
     return (
         <div>
-            <Navbar />
             <div className="min-h-screen bg-gray-50 py-10 px-4">
                 
 
